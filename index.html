@@ -1,82 +1,207 @@
 <!DOCTYPE html>
 <html>
   <head>
+	<meta charset="UTF-8"> 
     <title>Context Menu</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
     <!-- <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap-theme.min.css"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+	<style>
+	 
+	 body{
+	   background: #000000;
+	   padding-top: 70px;
+	   padding-left: 15px;
+	   padding-right: 15px;
+	 }
+	 .navbar{
+	   -webkit-user-select:none;
+	   -webkit-app-region:drag;
+	 }
+	 
+	 .battle-panel {
+	   background-color: #333;
+	   border-color: #333;
+	   /* 	   width: 48%; */
+	   margin: 10px 0% 1em;
+	   padding: 15px;
+	 }
+	 .battle-info {
+	   text-align: left;
+	 }
+
+	 .battle-teaser {
+	   width: 80px;
+	   height:80px;
+	   /* 	   margin: 2px 1% 2px; */
+	 }
+
+	 .server-badge {
+	   text-align: right;
+	 }
+	 #box-pad {
+	   height: 70px;
+	 }
+
+	 .battle-name {
+	   color: #00b0f0;
+	 }
+
+	 .battle-details {
+	   margin-top:20px;
+	   /* 	   margin-bottom: 10px; */
+	 }
+
+	 .align-right {
+	   text-align: right;
+	 }
+	 
+	 /* .battle-details > div {
+		vertical-align: middle;
+		} */
+	 
+	</style>
   </head>
-  <body style="width: 100%; height: 100%;">
+  <body style="width: 100%; height: 100%; ">
     
-    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-	<span class="navbar-toggler-icon"></span>
+	<!-- Navigator Bar(Using body padding to solve the 'fixed nav bar problem') -->
+
+    <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
       </button>
       <a class="navbar-brand" href="#">Navbar</a>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-	<ul class="navbar-nav">
-	  <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-	  </li>
-	  <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
-	  </li>
-	  <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-	  </li>
-	  <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown link
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Action</a>
 
-            </div>
-	  </li>
-	</ul>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+		  <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+		  </li>
+		  <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+		  </li>
+		  <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+		  </li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0">
+		  <input class="form-control mr-sm-2" type="text" placeholder="Search">
+		  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+		</form>
       </div>
     </nav>
 
-    <div class="card" style="padding-top:10px; padding-left: 10px; padding-right: 10px;">
-      <img class="card-img-left" src="" alt="Card image cap">
-      <div class="card-block">
-	<h4 class="card-title">A battle</h4>
-	<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-	<a href="#" class="btn btn-primary">Go to battle</a>
-      </div>
-    </div>
+
+
+
+	<!-- <div class="row">
+		 <div class="col-sm-4">
+		 
+		 </div>
+		 </div> -->
+	
+	<!-- <div id="box-pad"></div> -->
+
+	<div class="container">
+	  <!-- Row for two battle cards -->
+	  <div class="row">
+		<!-- First Card -->
+		<div class="col-sm-6">
+		  
+		  <div class="battle-panel card card-inverse">
+			<!-- First row: battle teaser and server name -->
+			<div class="row">
+			  <div class="col-2 col-sm-2">
+				<img class="battle-teaser card-img-left" src="./media/imgs/timg-2.jpeg" alt="Card image cap">
+			  </div>
+			  <div class="battle-info col-4 col-sm-4">
+				<h4 class="battle-name">A Battle</h4>
+				<p>不服来战！</p>
+			  </div>
+			  <div class="server-badge col-6 col-sm-6">
+				<h4><span class="badge badge-success">比尔吉沃特</span></h4>
+			  </div>
+
+			  <!-- Second Row -->
+			  
+			</div>
+			<div class="battle-details row">
+			  <div class="col">战斗力:500</div>
+			  <div class="col">奖励:100</div>
+			  <div class="col">06.28 20:00</div>
+			  <div class="col align-right">
+				<button type="button" class="btn btn-success">一键建房</button>
+			  </div>
+			</div>
+		  </div>  <!-- end for card -->
+		  
+		</div><!-- end for col-sm-6 -->
+		<!-- Second Card -->
+		<div class="col-sm-6">
+
+		  <div class="battle-panel card card-inverse">
+			<!-- First row: battle teaser and server name -->
+			<div class="row">
+			  <div class="col-2 col-sm-2">
+				<img class="battle-teaser card-img-left" src="./media/imgs/timg-2.jpeg" alt="Card image cap">
+			  </div>
+			  <div class="battle-info col-4 col-sm-4">
+				<h4 class="battle-name">A Battle</h4>
+				<p>不服来战！</p>
+			  </div>
+			  <div class="server-badge col-6 col-sm-6">
+				<h4><span class="badge badge-success">比尔吉沃特</span></h4>
+			  </div>
+
+			  <!-- Second Row -->
+			  
+			</div>
+			<div class="battle-details row">
+			  <div class="col">战斗力:500</div>
+			  <div class="col">奖励:100</div>
+			  <div class="col">06.28 20:00</div>
+			  <div class="col align-right">
+				<button type="button" class="btn btn-success">一键建房</button>
+			  </div>
+			</div>
+		  </div>  <!-- end for card -->
+		  
+		</div>
+	  </div>
+	</div>
+
 
 
     <!-- <script src="../js/main.js"></script> -->
     <!-- <script>
-	 var os = require('os');
-	 document.write('You are running on ', os.platform());
-	 // Create an empty context menu
-	 var menu = new nw.Menu();
+		 var os = require('os');
+		 document.write('You are running on ', os.platform());
+		 // Create an empty context menu
+		 var menu = new nw.Menu();
 
-	 // Add some items with label
-	 menu.append(new nw.MenuItem({
-	 label: 'Item A',
-	 click: function(){
-	 alert('You have clicked at "Item A"');
-	 }
-	 }));
-	 menu.append(new nw.MenuItem({ label: 'Item B' }));
-	 menu.append(new nw.MenuItem({ type: 'separator' }));
-	 menu.append(new nw.MenuItem({ label: 'Item C' }));
+		 // Add some items with label
+		 menu.append(new nw.MenuItem({
+		 label: 'Item A',
+		 click: function(){
+		 alert('You have clicked at "Item A"');
+		 }
+		 }));
+		 menu.append(new nw.MenuItem({ label: 'Item B' }));
+		 menu.append(new nw.MenuItem({ type: 'separator' }));
+		 menu.append(new nw.MenuItem({ label: 'Item C' }));
 
-	 // Hooks the "contextmenu" event
-	 document.body.addEventListener('contextmenu', function(ev) {
-	 // Prevent showing default context menu
-	 ev.preventDefault();
-	 // Popup the native context menu at place you click
-	 menu.popup(ev.x, ev.y);
+		 // Hooks the "contextmenu" event
+		 document.body.addEventListener('contextmenu', function(ev) {
+		 // Prevent showing default context menu
+		 ev.preventDefault();
+		 // Popup the native context menu at place you click
+		 menu.popup(ev.x, ev.y);
 
-	 return false;
-	 }, false);
+		 return false;
+		 }, false);
 
-	 </script>   -->
+		 </script>   -->
   </body>
 </html>

@@ -3,11 +3,19 @@
     "version": "0.0.1",
     "main": "index.html",
     "window":{
-	"title":"Bull Fight",
-	"toolbar": true,
-	"frame": false,
-	"width": 900,
-	"height": 650,
-	"position": "center"
-    }
+		"title":"Bull Fight",
+		"toolbar": true,
+		"frame": false,
+		"width": 1280,
+		"height": 800,
+		"position": "center"
+    },
+	"webkit": {
+		"plugin": true
+	},
+	"dependencies": {
+		"vue-router": "^2.3.0",
+		"socket.io": "~0.9.6",
+		"mime": "~1.2.7"
+	}
 }
