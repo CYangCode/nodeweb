@@ -1,0 +1,93 @@
+body{
+	background: #000000;
+	padding-top: 70px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.navbar{
+	-webkit-user-select:none;
+	-webkit-app-region:drag;
+}
+.battle-panel {
+	background-color: #333;
+	border-color: #333;
+	/* 	   width: 48%; */
+	margin: 10px 0% 1em;
+	padding: 15px;
+}
+.battle-info {
+	text-align: left;
+}
+
+.battle-teaser {
+	width: 80px;
+	height:80px;
+	/* 	   margin: 2px 1% 2px; */
+}
+
+.server-badge {
+	text-align: right;
+}
+#box-pad {
+	height: 70px;
+}
+
+.battle-name {
+	color: #00b0f0;
+}
+
+.battle-details {
+	margin-top:20px;
+	/* 	   margin-bottom: 10px; */
+}
+
+.align-right {
+	text-align: right;
+}
+
+.align-left {
+	text-align: left;
+}
+
+.align-center {
+	text-align: center;
+}
+
+#myKanban{overflow-x: auto; padding:10px 0;}
+
+.success{background: #00B961; color:#fff}
+.info{background: #2A92BF; color:#fff}
+.warning{background: #F4CE46; color:#fff}
+.error{background: #FB7D44; color:#fff}
+
+.white-color {
+	color: #ffffff;
+}
+
+.gray-color {
+	color: #a2b4ba;
+}
+
+.user-info-img {
+	width: 178px;
+	height: 178px;
+}
+
+.row {
+	margin-top:10px;
+}
+
+.value-number {
+	font-size:28px;
+	color: #00b38c;
+}
+
+.nick-name {
+	color: #00b0f0;
+	font-size: 20px;
+}
+
+.fight-force {
+	color: #eff0dc;
+	font-size: 15px;
+}
