@@ -8,6 +8,7 @@ body{
 	-webkit-user-select:none;
 	-webkit-app-region:drag;
 }
+
 .battle-panel {
 	background-color: #333;
 	border-color: #333;
@@ -90,4 +91,13 @@ body{
 .fight-force {
 	color: #eff0dc;
 	font-size: 15px;
+}
+
+.user-detail-img {
+	width: 148px;
+	height: 148px;
+}
+
+.nav a {
+	font-size: 24px;
 }
