@@ -81,17 +81,10 @@
 
 		  </div>
 
-		  <div class="chat-btns">
-			<!-- Emotion Icon Button -->
-			<div class="tool-btn emo" onclick="toggleEmo()">
-			  <!-- <span class="emotion-box" id="emotion-picker">Emotions</span> -->
-			  <i class="fa fa-smile-o" aria-hidden="true"></i>
-			</div>
-			<!-- Insert Image Button -->
-			<div class="tool-btn img">
-			  <i class="fa fa-picture-o" aria-hidden="true"></i>
-			</div>
-		  </div>
+		 
+		  
+
+		  <!-- chat form -->
 		  <div class="chat-form">
 			<textarea></textarea>
 		  </div>
@@ -99,6 +92,21 @@
 			<button class="send-btn">
 			  <i class="fa fa-paper-plane" aria-hidden="true"></i>
 			</button>
+			<div class="chat-btns">
+			  <!-- Emotion Icon Button -->
+			  <div class="tool-btn emo" onclick="toggleEmo()">
+				<span class="emotion-box" id="emotion-picker">Emotions</span>
+				<i class="fa fa-smile-o" aria-hidden="true"></i>
+			  </div>
+			  <!-- Insert Image Button -->
+			  <div class="tool-btn img">
+				<i class="fa fa-picture-o" aria-hidden="true"></i>
+			  </div>
+
+			  <div class="tool-btn screenshot">
+				<i class="fa fa-scissors" aria-hidden="true"></i>
+			  </div>
+			</div>
 		  </div>
 		</div>
 
@@ -182,6 +190,15 @@
 		</div><!-- friend box -->
 	  </div><!-- chat-page -->
 	</div><!-- Container -->
+
+
+	<script>
+	 // When the user clicks on div, open the popup
+	 function toggleEmo() {
+       var popup = document.getElementById("emotion-picker");
+       popup.classList.toggle("show");
+	 }
+	</script>
 	
   </body>
 

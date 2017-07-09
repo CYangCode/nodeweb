@@ -3,11 +3,22 @@
   <head>
 	<meta charset="UTF-8"> 
     <title>Context Menu</title>
+	<script src="./js/jquery-2.2.4.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
     <!-- <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap-theme.min.css"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+	<script src="./js/create_room.js"></script>
+	<link rel="stylesheet" href="./css/modal.css">
+	<script src="./js/modal.js"></script>
+
+	<!-- form css -->
+	<link rel="stylesheet" href="./css/form.css">
+
+	<!-- validate -->
+	<script src="./js/jquery.validate.min.js"></script>
+	<script src="./js/validate_roominfo.js"></script>
 	<style>
 	 
 	 body{
@@ -57,11 +68,25 @@
 	 .align-right {
 	   text-align: right;
 	 }
+
+	 .rift-map {
+	   text-align: center;
+	 }
+	 
+	 .rift-map img {
+	   width: 90%;
+	 }
+
+	 
+	 label.error {
+	   background: #f4f7f8;
+	   color: #ff4124;
+	 }
 	 
 	 /* .battle-details > div {
 		vertical-align: middle;
 		} */
-	 
+
 	</style>
   </head>
   <body style="width: 100%; height: 100%; ">
@@ -113,6 +138,9 @@
 	<!-- <div id="box-pad"></div> -->
 
 	<div class="container">
+	  <div class="row">
+		<button type="button" class="btn btn-success" id="create_room">创建房间</button>
+	  </div>
 	  <!-- Row for two battle cards -->
 	  <div class="row">
 		<!-- First Card -->
@@ -179,6 +207,81 @@
 		</div>
 	  </div>
 	</div>
+
+
+
+	<div class="modal" id="create_room_modal">
+	  <div class="modal-content">
+
+		<div class="modal-header">
+		  <span class="close" id="create_close">&times;</span>
+		</div>
+		<div class="modal-body">
+
+		  <div class="form-style-5">
+			<form id="roominfo_form">
+			  <div class="row">
+				<div class="col">
+				  <fieldset>
+					<legend><span class="number">1</span>房间基本信息</legend>
+					<input type="text" name="roominfo_name" id="roominfo_name" placeholder="房间名 *">
+					<input type="text" name="roominfo_desc" id="roominfo_desc" value="不服来战">
+
+					<legend><span class="number">2</span>对战地图</legend>
+					<select id="map" name="field3">
+
+					  <option value="fast-condition">召唤师峡谷</option>
+					  <option value="full-condition" disabled>嚎哭深渊（敬请期待）</option>
+
+					</select>
+					<div class="rift-map">
+					  <img src="./media/imgs/rift_map.jpg">
+					</div>
+				  </fieldset>
+
+				 
+				</div>
+				<div class="col">
+				  <fieldset>
+					<legend><span class="number">3</span>房间设置</legend>
+					
+					<label for="winning">胜利条件</label>
+					<select id="winning" name="field4">
+
+					  <option value="fast-condition">1血1塔100刀</option>
+					  <option value="full-condition">推掉基地</option>
+
+					</select>
+
+					<label for="game-mode">游戏模式</label>
+					<select id="game-mode" name="field5">
+					  <option value="fast-condition">常规模式</option>
+					  <option value="full-condition">娱乐模式</option>
+					</select>
+					
+					<label for="reward-type">奖励类型</label>
+					<select id="reward-type" name="field6">
+					  <option value="fast-condition">礼券</option>
+					  <option value="full-condition">积分</option>
+					</select>
+
+					<label for="reward-amount">奖励数量</label>
+					<input type="text" placeholder="100">
+
+					<label>创建时间</label>
+					<label id="create_date_time"></label>
+					
+				  </fieldset>
+
+				  <input type="submit" value="创建" />
+				</div>
+			  </div>
+			</form>
+		  </div>
+		  
+		</div>
+	  </div>
+	</div><!-- End of Log Modal -->
 
 
 
